@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      Funcionamiento:
+        - Comienza con index.js que llama al id root de este html. Junto al Componente GifExpertApp renderiza la vista.
+          - GifExpertApp tiene un useState de categorías y dos Componentes llamados AddCategory y GifGrid.
+            - AddCategory recibe el useState setCategories del GifExpertApp.
+            - AddCategory tiene un Input para escribir una Categoría, lo escrito en el input se almacena
+              en un useState en tiempo real (a medida de que se escribe). Al presionar enter, se agrega lo que contiene el
+              useState del input al setCategories.
+          - Como el setCategories se actualiza, su useState que está en el GifExpertApp renderizará nuevamente la página, y llamará
+            al GifGrid pasandole las categorías actualizadas.
+            - El GifGrid recibe una Categoría y utliza un hooks llamado useFetchGifs para pasarse la categoría.
+            - El useFetchGifs solo se encarga de llamar al helpers getGifs.js que este solo hace la solicitud https para obtener los
+              gifs con la Categoría.
+            - El useFetchGifs retorna un arreglo de imagenes con sus url al GifGrid, el cual se mandan al GifGridItem para crear un item Card
+              por cada imagen.
+          -->
+  </body>
+</html>
